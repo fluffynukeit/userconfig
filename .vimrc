@@ -1,5 +1,5 @@
 "============  Standard VIM OPTIONS ============
-" Enable line numbers
+" Enable line numbers on the left hand side
 set number
 " Enable syntax highlighting
 syntax on
@@ -7,7 +7,7 @@ syntax on
 filetype plugin on
 " Better command-line completion
 set wildmenu
-" Highlight searches
+" Highlight text searches
 set hlsearch
 " Use case insensitive search, except when using capital letters
 set ignorecase
@@ -16,11 +16,11 @@ set smartcase
 set backspace=indent,eol,start
 " Keep same indent as current line when opening new line
 set autoindent
-" Display cursor position on last line
+" Display cursor position on last line of the window 
 set ruler
 " Always display the status line
 set laststatus=2
-" Instead of fail command, present dialog if unsaved changes
+" Instead of failing command, present dialog if unsaved changes
 set confirm
 " Use visual bell instead of beeping when doing something wrong
 set visualbell
@@ -39,29 +39,22 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-" Map jk and kj to <Esc> when in insert mode
+" Map jk and kj to <Esc> to exit insert mode.  We need to use F11 to toggle to
+" paste mode before pasting any string with jk or kj, then switch back. When
+" inserting jk or kj manually, we will need to type the keys slowly so that the 
+" key mapping times out.  Using jk or kj to escape is easier than many other
+" alternatives.
 ino jk <Esc>
 ino kj <Esc>
 
-" Map shift-j and shift-k to tab up and tab down
+" Map shift-j and shift-k to tab up and tab down for easier switching between
+" tabbed windows.
 nno <S-j> gT
 nno <S-k> gt
 
-" Set a vertical line for long line width
+" Set a vertical line for long line width. This will give us a visual
+" indicator for cases in which line length is approaching 80 chars 
 set colorcolumn=80
 
-" ============== HASKELL SPECIFIC STUFF ===========
-
-au Bufenter *.hs compiler ghc
-:let g:haddock_browser = "firefox"
-:let g:haddock_browser_callformat = "%s %s " . &shellredir . "/dev/null" . " &"
-:let g:haddock_indexfiledir="~/"
-:let g:haddock_docdir="/nix/store/1jp3vsjcl8ydiy92lzyjclwr943vh5lx-ghc-7.6.3/share/doc/ghc/html/"
-:let g:haddock_browser_nosilent=1
 
 
-set makeprg=cabal\ build
-
-
-
-execute pathogen#infect()
