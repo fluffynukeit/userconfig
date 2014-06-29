@@ -12,6 +12,7 @@ Plugin 'tpope/vim-sensible'
 
 Plugin 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list=1
+let g:syntastic_check_on_open=1
 
 Plugin 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled=1
@@ -93,7 +94,8 @@ set cmdheight=2
 set background=dark
 colorscheme solarized
 
-
+" Want to be able to switch from a buffer without saving it
+set hidden
 
 " =========== HASKELL (PLUGIN) SPECIFIC STUFF ============
 
