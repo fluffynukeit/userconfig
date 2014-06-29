@@ -53,11 +53,6 @@ set mouse=a
 ino jk <Esc>
 ino kj <Esc>
 
-" Map shift-j and shift-k to tab up and tab down for easier switching
-" between tabbed windows.
-nno <S-j> gT
-nno <S-k> gt
-
 " Set a vertical line for long line width. This will give us a visual
 " indicator for cases in which line length is approaching 80 chars 
 set colorcolumn=80
