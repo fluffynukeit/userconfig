@@ -9,6 +9,7 @@ Plugin 'gmarik/Vundle.vim'
 " LIST PLUGINS HERE
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-sensible'
+Plugin 'scrooloose/syntastic'
 Plugin 'dag/vim2hs'
 
 " VUNDLE Cleanup
@@ -59,7 +60,3 @@ nno <S-k> gt
 " indicator for cases in which line length is approaching 80 chars 
 set colorcolumn=80
  
-" ============= HASKELL SPECIFIC STUFF ===========
-au BufWritePost *.hs :silent HLint
-au BufWritePost *.hs :redraw!
-au BufWritePost *.hs :cw
