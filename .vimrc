@@ -9,12 +9,37 @@ Plugin 'gmarik/Vundle.vim'
 " LIST PLUGINS HERE
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-sensible'
+
 Plugin 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list=1
+
 Plugin 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemod=':t'
+" Add better unicode symbols, but don't bother with powerline fonts
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
+autocmd vimenter * NERDTree
+let NERDTreeWinSize=20
+
 Plugin 'dag/vim2hs'
 
 " VUNDLE Cleanup
@@ -67,25 +92,6 @@ set cmdheight=2
 " Colorscheme settings
 set background=dark
 colorscheme solarized
-
-" Add better unicode symbols, but don't bother with powerline fonts
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
 
 
 
