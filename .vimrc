@@ -90,5 +90,4 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 
 " =========== HASKELL (PLUGIN) SPECIFIC STUFF ============
-let g:syntastic_check_on_open=1
 
