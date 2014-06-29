@@ -9,6 +9,7 @@ Plugin 'gmarik/Vundle.vim'
 " LIST PLUGINS HERE
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-sensible'
+Plugin 'dag/vim2hs'
 
 " VUNDLE Cleanup
 call vundle#end()
@@ -50,8 +51,7 @@ ino jk <Esc>
 ino kj <Esc>
 
 " Map shift-j and shift-k to tab up and tab down for easier switching
-" between
-" tabbed windows.
+" between tabbed windows.
 nno <S-j> gT
 nno <S-k> gt
 
@@ -59,3 +59,7 @@ nno <S-k> gt
 " indicator for cases in which line length is approaching 80 chars 
 set colorcolumn=80
  
+" ============= HASKELL SPECIFIC STUFF ===========
+au BufWritePost *.hs :silent HLint
+au BufWritePost *.hs :redraw!
+au BufWritePost *.hs :cw
