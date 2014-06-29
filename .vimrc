@@ -60,3 +60,6 @@ nno <S-k> gt
 " indicator for cases in which line length is approaching 80 chars 
 set colorcolumn=80
  
+" =========== HASKELL (PLUGIN) SPECIFIC STUFF ============
+let g:syntastic_check_on_open=1
+
