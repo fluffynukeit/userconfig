@@ -10,6 +10,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-sensible'
 Plugin 'scrooloose/syntastic'
+let g:syntastic_always_populate_loc_list=1
 Plugin 'dag/vim2hs'
 
 " VUNDLE Cleanup
@@ -27,7 +28,7 @@ set pastetoggle=<F11>
 
 " vim-sensible enables smarttab.  Here, we configure the rest:
 " Set the display size of \t characters
-set tabstop=4
+set tabstop=2
 " When hitting <TAB>, insert combination of \t and spaces for this width.
 " This combination is deleted as if it were 1 \t when using backspace.
 set softtabstop=2
@@ -60,6 +61,11 @@ nno <S-k> gt
 " indicator for cases in which line length is approaching 80 chars 
 set colorcolumn=80
  
+" Set the command section height to 2 lines.  Useful if notices (like
+" syntastic) are shown on command lines.
+set cmdheight=2
+
+
 " =========== HASKELL (PLUGIN) SPECIFIC STUFF ============
 let g:syntastic_check_on_open=1
 
