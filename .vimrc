@@ -11,6 +11,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-sensible'
 Plugin 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list=1
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'dag/vim2hs'
 
 " VUNDLE Cleanup
@@ -65,6 +66,9 @@ set colorcolumn=80
 " syntastic) are shown on command lines.
 set cmdheight=2
 
+" Colorscheme settings
+set background=dark
+colorscheme solarized
 
 " =========== HASKELL (PLUGIN) SPECIFIC STUFF ============
 let g:syntastic_check_on_open=1
