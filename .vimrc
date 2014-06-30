@@ -39,6 +39,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 autocmd vimenter * NERDTree
+autocmd vimenter * wincmd p
 let NERDTreeWinSize=20
 
 Plugin 'dag/vim2hs'
