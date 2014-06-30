@@ -42,6 +42,9 @@ autocmd vimenter * NERDTree
 autocmd vimenter * wincmd p
 let NERDTreeWinSize=20
 
+Plugin 'tpope/vim-fugitive'
+
+
 Plugin 'dag/vim2hs'
 
 " VUNDLE Cleanup
