@@ -37,10 +37,10 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
-autocmd vimenter * NERDTree
-autocmd vimenter * wincmd p
-let NERDTreeWinSize=20
+" Plugin 'scrooloose/nerdtree'
+" autocmd vimenter * NERDTree
+" autocmd vimenter * wincmd p
+" let NERDTreeWinSize=20
 
 Plugin 'tpope/vim-fugitive'
 
@@ -100,6 +100,10 @@ colorscheme solarized
 
 " Want to be able to switch from a buffer without saving it
 set hidden
+
+" Disable code folding.  It's pretty annoying to have code get folded all the
+" time when you open a file
+set nofoldenable
 
 " =========== HASKELL (PLUGIN) SPECIFIC STUFF ============
 
