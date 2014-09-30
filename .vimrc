@@ -47,6 +47,8 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'dag/vim2hs'
 
+Plugin 'nbouscal/vim-stylish-haskell'
+
 " VUNDLE Cleanup
 call vundle#end()
 filetype plugin indent on 
