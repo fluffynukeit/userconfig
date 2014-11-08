@@ -49,6 +49,9 @@ Plugin 'dag/vim2hs'
 
 Plugin 'nbouscal/vim-stylish-haskell'
 
+" Now a plugin for Purescript
+Plugin 'raichoo/purescript-vim'
+
 " VUNDLE Cleanup
 call vundle#end()
 filetype plugin indent on 
@@ -106,6 +109,9 @@ set hidden
 " Disable code folding.  It's pretty annoying to have code get folded all the
 " time when you open a file
 set nofoldenable
+
+" If starting VIM without a filename, restore the previous buffers.
+set viminfo^=%
 
 " =========== HASKELL (PLUGIN) SPECIFIC STUFF ============
 
