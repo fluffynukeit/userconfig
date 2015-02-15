@@ -1,11 +1,11 @@
 # I want .nix-defexpr to be a symbolic link to /home/dan/Code/nixpkgs, but 
 # the symbolic link is deleted and replaced with a default on startup.  Fix it
 # here.
-rm -r ~/.nix-defexpr
-ln -s /home/dan/Code/nixpkgs ~/.nix-defexpr
+#rm -r ~/.nix-defexpr
+#ln -s /home/dan/Code/nixpkgs ~/.nix-defexpr
 
 
-export NIX_PATH=/home/dan/Code:nixos-config=/etc/nixos/configuration.nix;
+#export NIX_PATH=/home/dan/Code:nixos-config=/etc/nixos/configuration.nix;
 
 # Note: NIX_PKGS is for <bracket> resolution in nix expressions.  Folder 
 # .nix-defexpr is used for nix-env commands.
