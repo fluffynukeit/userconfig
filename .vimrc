@@ -36,7 +36,7 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-Plugin 'altercation/vim-colors-solarized'
+" Plugin 'altercation/vim-colors-solarized'
 " Plugin 'scrooloose/nerdtree'
 " autocmd vimenter * NERDTree
 " autocmd vimenter * wincmd p
@@ -101,7 +101,7 @@ set cmdheight=2
 
 " Colorscheme settings
 set background=dark
-colorscheme solarized
+colorscheme desert
 
 " Want to be able to switch from a buffer without saving it
 set hidden
