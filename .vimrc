@@ -10,10 +10,23 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-sensible'
 
-Plugin 'scrooloose/syntastic'
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_check_on_open=1
+" modified warm desert colors for 256 color vim
+Plugin 'rainux/vim-desert-warm-256'
 
+" indentation alignment guides
+Plugin 'Yggdroot/indentLine'
+
+" Syntax checking and linting
+Plugin 'scrooloose/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=0
+let g:syntastic_check_on_wq=0
+
+" slick status line
 Plugin 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemod=':t'
@@ -36,32 +49,67 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-" Plugin 'altercation/vim-colors-solarized'
-" Plugin 'scrooloose/nerdtree'
-" autocmd vimenter * NERDTree
-" autocmd vimenter * wincmd p
-" let NERDTreeWinSize=20
-
+" Git commands from Vim
 Plugin 'tpope/vim-fugitive'
 
+" delimitMate adds paired parenths/brackets automatically
+Plugin 'Raimondi/delimitMate' 
+" add a key mapping to expand brackets to multiple lines
+imap <C-c> <CR><Esc>O
+
+" YouCompleteMe for autocompletion (this requires a manual compile step, too)
+Plugin 'Valloric/YouCompleteMe'
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
+
+
+" HASKELL PLUGINS
 
 Plugin 'dag/vim2hs'
-
+" autoformat haskell code
 Plugin 'nbouscal/vim-stylish-haskell'
 
-" Now a plugin for Purescript
+
+
+" PURESCRIPT PLUGINS
 Plugin 'raichoo/purescript-vim'
+
+
+
+" JAVASCRIPT PLUGINS
+
+" (from oli.me.uk/2013/06/29/equipping-vim-for-javascript)
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+
+" react stuff (see syntastic-react, jaxbot's article for vim and react)
+Plugin 'mxw/vim-jsx'
+let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+
+" Tern javascript semantic server (requires manual npm install step)
+Plugin 'marijnh/tern_for_vim'
 
 " VUNDLE Cleanup
 call vundle#end()
 filetype plugin indent on 
 
 
+
+
 " ========== GENERAL VIM SETTINGS ==========
-" Enable search highlighting
-set hlsearch
+" Color settings
+set t_Co=256
+colorscheme desert-warm-256
+set background=dark
+
+" Enable incremental search
+set incsearch
 " Enable line numbers
 set number
+" Enable relative line numbers
+set relativenumber
 " Use F11 to toggle between paste and nopaste
 set pastetoggle=<F11>
 
@@ -99,10 +147,6 @@ set colorcolumn=80
 " syntastic) are shown on command lines.
 set cmdheight=2
 
-" Colorscheme settings
-set background=dark
-colorscheme desert
-
 " Want to be able to switch from a buffer without saving it
 set hidden
 
@@ -113,5 +157,4 @@ set nofoldenable
 " If starting VIM without a filename, restore the previous buffers.
 set viminfo^=%
 
-" =========== HASKELL (PLUGIN) SPECIFIC STUFF ============
 
